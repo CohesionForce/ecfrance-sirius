@@ -843,7 +843,8 @@ public class DDiagramEditorImpl extends SiriusDiagramEditor implements DDiagramE
             /* register our menu provider to provide our custom delete action */
             final DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this, getDiagramGraphicalViewer());
             getDiagramGraphicalViewer().setContextMenu(provider);
-            getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
+            //FIXME - ContextMenu
+//            getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 
             getOperationHistory().addOperationHistoryListener(operationHistoryListener);
         } else {

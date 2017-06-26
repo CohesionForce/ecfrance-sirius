@@ -64,16 +64,17 @@ public class TabbarRefresher extends ResourceSetListenerImpl {
     private void reinitToolbar() {
         EclipseUIUtil.displayAsyncExec(new Runnable() {
             public void run() {
-                IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-                if (activeWorkbenchWindow != null) {
-                    IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
-                    if (activePage != null) {
-                        IEditorPart activeEditor = activePage.getActiveEditor();
-                        if (activeEditor instanceof DDiagramEditorImpl && ((DDiagramEditorImpl) activeEditor).getTabbar() != null) {
-                            ((DDiagramEditorImpl) activeEditor).getTabbar().reinitToolBar(((DDiagramEditorImpl) activeEditor).getDiagramGraphicalViewer().getSelection());
-                        }
-                    }
-                }
+                //FIXME - WorkbenchWindow
+//                IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+//                if (activeWorkbenchWindow != null) {
+//                    IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
+//                    if (activePage != null) {
+//                        IEditorPart activeEditor = activePage.getActiveEditor();
+//                        if (activeEditor instanceof DDiagramEditorImpl && ((DDiagramEditorImpl) activeEditor).getTabbar() != null) {
+//                            ((DDiagramEditorImpl) activeEditor).getTabbar().reinitToolBar(((DDiagramEditorImpl) activeEditor).getDiagramGraphicalViewer().getSelection());
+//                        }
+//                    }
+//                }
             }
         });
     }

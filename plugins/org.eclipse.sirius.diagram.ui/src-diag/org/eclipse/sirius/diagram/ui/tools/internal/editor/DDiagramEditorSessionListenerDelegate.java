@@ -223,11 +223,12 @@ public class DDiagramEditorSessionListenerDelegate implements Runnable {
      */
     private Image getInitialImage() {
         if (initialTitleImage == null || initialTitleImage.isDisposed()) {
-            IEditorRegistry editorRegistry = PlatformUI.getWorkbench().getEditorRegistry();
-            IEditorDescriptor editorDesc = editorRegistry.findEditor(dDiagramEditorImpl.getSite().getId());
-            if (editorDesc != null) {
-                initialTitleImage = DiagramUIPlugin.getPlugin().getImage(editorDesc.getImageDescriptor());
-            }
+            //FIXME - EditorRegistry
+//            IEditorRegistry editorRegistry = PlatformUI.getWorkbench().getEditorRegistry();
+//            IEditorDescriptor editorDesc = editorRegistry.findEditor(dDiagramEditorImpl.getSite().getId());
+//            if (editorDesc != null) {
+//                initialTitleImage = DiagramUIPlugin.getPlugin().getImage(editorDesc.getImageDescriptor());
+//            }
         }
         return initialTitleImage;
     }

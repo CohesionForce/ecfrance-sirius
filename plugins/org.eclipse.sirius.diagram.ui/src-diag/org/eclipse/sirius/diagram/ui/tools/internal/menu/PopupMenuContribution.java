@@ -78,6 +78,7 @@ import org.eclipse.sirius.viewpoint.description.tool.OperationAction;
 import org.eclipse.sirius.viewpoint.description.tool.PopupMenu;
 import org.eclipse.sirius.viewpoint.description.tool.ToolEntry;
 import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchPart;
@@ -220,7 +221,8 @@ public class PopupMenuContribution implements IContributionItemProvider {
      * @return the location where the element must be created.
      */
     protected Point getCurrentLocation(EditPart primarySelection) {
-        org.eclipse.swt.graphics.Point cursorLocation = PlatformUI.getWorkbench().getDisplay().getCursorLocation();
+        //FIXME - DISPLAY
+        org.eclipse.swt.graphics.Point cursorLocation = Display.getCurrent().getCursorLocation();
         final FigureCanvas control = (FigureCanvas) primarySelection.getRoot().getViewer().getControl();
         final org.eclipse.swt.graphics.Point screenRelativeSWTPoint = control.toControl(cursorLocation);
         EditPart editPartUnderMouse = primarySelection.getRoot().getViewer().findObjectAtExcluding(new Point(screenRelativeSWTPoint.x, screenRelativeSWTPoint.y), Collections.EMPTY_LIST);

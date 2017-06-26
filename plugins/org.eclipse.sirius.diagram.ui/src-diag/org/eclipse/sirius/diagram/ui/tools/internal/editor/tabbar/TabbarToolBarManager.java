@@ -98,10 +98,11 @@ public class TabbarToolBarManager extends ToolBarManager {
     }
 
     private IWorkbenchPage getSafeActivePage() {
-        IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-        if (activeWorkbenchWindow != null) {
-            return activeWorkbenchWindow.getActivePage();
-        }
+        //FIXME - PartService - ActivePage
+//        IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+//        if (activeWorkbenchWindow != null) {
+//            return activeWorkbenchWindow.getActivePage();
+//        }
         return null;
     }
 

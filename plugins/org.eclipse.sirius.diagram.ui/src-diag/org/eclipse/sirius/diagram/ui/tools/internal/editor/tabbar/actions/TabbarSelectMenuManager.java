@@ -114,14 +114,15 @@ public class TabbarSelectMenuManager extends SelectMenuManager {
     @Override
     public void setVisible(boolean visible) {
         super.setVisible(visible);
-        if (isEmpty() && visible) {
-            IWorkbenchPage page = EclipseUIUtil.getActivePage();
-            if (page != null) {
-                add(SelectAllAction.createToolbarSelectAllAction(page));
-                add(SelectAllAction.createToolbarSelectAllConnectionsAction(page));
-                add(SelectAllAction.createToolbarSelectAllShapesAction(page));
-                setDefaultAction("toolbarSelectAllAction"); //$NON-NLS-1$
-            }
-        }
+        //FIXME - PartService - ActivePage
+//        if (isEmpty() && visible) {
+//            IWorkbenchPage page = EclipseUIUtil.getActivePage();
+//            if (page != null) {
+//                add(SelectAllAction.createToolbarSelectAllAction(page));
+//                add(SelectAllAction.createToolbarSelectAllConnectionsAction(page));
+//                add(SelectAllAction.createToolbarSelectAllShapesAction(page));
+//                setDefaultAction("toolbarSelectAllAction"); //$NON-NLS-1$
+//            }
+//        }
     }
 }

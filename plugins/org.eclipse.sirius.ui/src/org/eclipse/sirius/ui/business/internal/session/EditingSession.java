@@ -151,8 +151,8 @@ public class EditingSession implements IEditingSession, ISaveablesSource, Refres
             editors.add(dialectEditor);
             editorNameAdapter.registerEditor(dialectEditor);
             needSaveOnCloseDetec.reInit();
-
-            reorderEditorsIfNeeded(dialectEditor);
+            //FIXME - IEditorSite
+//            reorderEditorsIfNeeded(dialectEditor);
 
             if (dialectEditor.getRepresentation() != null) {
                 dialectEditorClosers.put(dialectEditor, new DialectEditorCloser(this, dialectEditor));

@@ -31,6 +31,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPage;
@@ -77,7 +78,8 @@ public class Tabbar extends Composite implements ISelectionListener, IAuthorityL
         super(parent, SWT.None);
         setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
         this.part = part;
-        this.page = part.getSite().getPage();
+        //FIXME - IEditorSite
+//        this.page = part.getSite().getPage();
         GridLayout layout = new GridLayout(1, true);
         layout.verticalSpacing = 0;
         layout.marginHeight = 0;
@@ -100,6 +102,10 @@ public class Tabbar extends Composite implements ISelectionListener, IAuthorityL
     private void createToolBar() {
         toolBar = new ToolBar(this, SWT.FLAT);
         toolBar.setBackgroundMode(SWT.INHERIT_DEFAULT);
+        
+        //FIXME - Toolbar
+        toolBar.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_BLUE));
+        
         toolBar.setLayoutData(new org.eclipse.swt.layout.GridData(org.eclipse.swt.layout.GridData.FILL_HORIZONTAL));
 
         manager = new TabbarToolBarManager(toolBar, part);

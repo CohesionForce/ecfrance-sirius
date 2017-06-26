@@ -77,11 +77,13 @@ public final class EclipseUIUtil {
      * @return the active page or <code>null</code>
      */
     public static IWorkbenchPage getActivePage() {
-        final IWorkbenchWindow window = EclipseUIUtil.getActiveWindow();
-        if (window != null) {
-            return window.getActivePage();
-        }
+        //FIXME - PartService - ActivePage
         return null;
+//        final IWorkbenchWindow window = EclipseUIUtil.getActiveWindow();
+//        if (window != null) {
+//            return window.getActivePage();
+//        }
+//        return null;
     }
 
     /**

@@ -36,6 +36,7 @@ import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.sirius.viewpoint.description.tool.SelectionWizardDescription;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 
@@ -84,9 +85,11 @@ public class SelectionWizardCommand extends AbstractSelectionWizardCommand {
         computeInput();
         Shell shell = null;
         boolean createdShell = false;
-        if (PlatformUI.getWorkbench() != null && PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
-            shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-        }
+        //FIXME - SHELL
+        shell = Display.getDefault().getActiveShell();
+//        if (PlatformUI.getWorkbench() != null && PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
+//            shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+//        }
         if (shell == null) {
             shell = new Shell();
             createdShell = true;
